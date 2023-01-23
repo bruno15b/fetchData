@@ -9,7 +9,7 @@ export default async function fetchData() {
     }
     catch (error) {
         if (error instanceof Error)
-            console.log("fetchData: " + error.message);
+            console.error("fetchData: " + error.message);
         return null;
     }
 }

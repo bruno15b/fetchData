@@ -1,13 +1,19 @@
+import checkArrayItems from "./checkArrayItems.js";
 import fetchData from "./fetchData.js";
-import { APIData } from "./global.js";
+import { APIDataTransaction, Transaction } from "./global.js";
+import normalizeDataKeys from "./normalizeDataKeys.js";
 
 async function handleData() {
-  const data = await fetchData<APIData[]>();
-  if (data) data.map((obj) => addNames(obj));
+  const data = await fetchData<APIDataTransaction[]>();
+  if (data) {
+    const normalizedData = normalizeDataKeys(data);
+    if (checkArrayItems<Transaction>(normalizedData, "data", "status")) {
+      normalizedData.forEach((obj) => appendNamesToHTML(obj));
+    }
+  }
 }
 
-function addNames(obj: APIData) {
-  return (document.body.innerHTML += `<p>${obj.Nome}</p>`);
+function appendNamesToHTML(obj: Transaction) {
+  return (document.body.innerHTML += `<p>${obj.nome}</p>`);
 }
-
 handleData();

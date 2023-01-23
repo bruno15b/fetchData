@@ -7,7 +7,7 @@ export default async function fetchData<T>(): Promise<T | null> {
     const json = await response.json();
     return json;
   } catch (error) {
-    if (error instanceof Error) console.log("fetchData: " + error.message);
+    if (error instanceof Error) console.error("fetchData: " + error.message);
     return null;
   }
 }
