@@ -13,11 +13,11 @@ export interface APIDataTransaction {
 
 export interface Transaction {
   clienteNovo: number;
-  data: string;
+  data: Date;
   email: string;
   formaDePagamento: string;
   id: number;
   nome: string;
   status: string;
-  valorR: string;
+  valorR: number;
 }

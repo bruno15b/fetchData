@@ -1,12 +1,15 @@
 import checkArrayItems from "./checkArrayItems.js";
 import fetchData from "./fetchData.js";
+import normalizeDataEntries from "./normalizeDataEntries.js";
 import normalizeDataKeys from "./normalizeDataKeys.js";
 async function handleData() {
     const data = await fetchData();
     if (data) {
-        const normalizedData = normalizeDataKeys(data);
-        if (checkArrayItems(normalizedData, "data", "status")) {
-            normalizedData.forEach((obj) => appendNamesToHTML(obj));
+        const normalizedDataKeys = normalizeDataKeys(data);
+        const normalizedDataEntries = normalizeDataEntries(normalizedDataKeys, "data", "valorR");
+        if (checkArrayItems(normalizedDataEntries, "data", "status")) {
+            console.log(normalizedDataEntries);
+            normalizedDataEntries.forEach((obj) => appendNamesToHTML(obj));
         }
     }
 }
