@@ -4,6 +4,8 @@ import { APIDataTransaction, Transaction } from "./global.js";
 import normalizeDataEntries from "./normalizeDataEntries.js";
 import normalizeDataKeys from "./normalizeDataKeys.js";
 
+const table = document.querySelector(".table-body");
+
 async function handleData() {
   const data = await fetchData<APIDataTransaction[]>();
   if (data) {
@@ -11,14 +13,25 @@ async function handleData() {
     const normalizedDataEntries = normalizeDataEntries(normalizedDataKeys, "data", "valorR");
 
     if (checkArrayItems<Transaction>(normalizedDataEntries, "data", "status")) {
-      console.log(normalizedDataEntries);
-      // normalizedDataEntries.forEach((obj) => appendNamesToHTML(obj));
+      normalizedDataEntries.forEach((obj) => appendTransactionToHTMLTable(obj));
     }
   }
 }
 
-function appendNamesToHTML(obj: Transaction) {
-  return (document.body.innerHTML += `<p>${obj.nome}</p>`);
+function appendTransactionToHTMLTable(obj: Transaction) {
+  if (table) {
+    return (table.innerHTML += `
+    <tr>
+     <td>${obj.nome}</td>
+     <td>${obj.email}</td>
+     <td>${obj.valorR}</td>
+     <td>${obj.formaDePagamento}</td>
+     <td>${obj.status}</td>
+    </tr>
+    `);
+  } else {
+    return null;
+  }
 }
 
 handleData();

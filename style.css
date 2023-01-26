@@ -9,13 +9,12 @@ p {
 }
 body {
   margin: 10px auto;
-  width: 90vh;
+  width: 95%;
   border-top: 10px solid rgba(240, 248, 255, 0.507);
 }
 ul,
 li {
   list-style: none;
-  font-weight: bold;
 }
 
 section {
@@ -43,15 +42,26 @@ p {
   border-bottom: 1px solid rgb(148, 50, 50);
 }
 
-.table li {
-  display: flex;
-  background-color: aliceblue;
+table {
+  text-align: center;
+  margin: 0 auto;
+  border-spacing: 0;
 }
 
-.table li p {
-  flex-grow: 1;
-  flex-basis: auto;
+table td,
+table th {
+  padding: 0.5rem 1rem;
 }
-.table-columns {
+
+table tr:nth-child(even) {
+  background: aliceblue;
+}
+
+.table-head {
   font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.table-body {
+  font-size: 1rem;
 }
