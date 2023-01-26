@@ -1,0 +1,1 @@
+{"version":3,"file":"calculateTotalAmount.js","sourceRoot":"","sources":["../src/calculateTotalAmount.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,OAAO,UAAU,oBAAoB,CAAC,gBAA+B;IAC1E,MAAM,WAAW,GAAG,gBAAgB,CAAC,MAAM,CAAC,CAAC,GAAG,EAAE,GAAG,EAAE,EAAE,CAAC,CAAC,GAAG,IAAI,GAAG,CAAC,MAAM,CAAC,EAAE,CAAC,CAAC,CAAC;IAClF,OAAO,WAAW,CAAC;AACrB,CAAC"}
