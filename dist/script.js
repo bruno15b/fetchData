@@ -9,7 +9,6 @@ async function handleData() {
         const normalizedDataEntries = normalizeDataEntries(normalizedDataKeys, "data", "valorR");
         if (checkArrayItems(normalizedDataEntries, "data", "status")) {
             console.log(normalizedDataEntries);
-            normalizedDataEntries.forEach((obj) => appendNamesToHTML(obj));
         }
     }
 }

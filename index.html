@@ -5,10 +5,40 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
   <title>Fetch Data</title>
 </head>
 
 <body>
+  <section class="statistics">
+    <h1>Estatísticas</h1>
+    <div class="total">
+      <p class="amount">Total:</p>
+    </div>
+    <div class="payment-methods">
+      <p class="credit-card">Cartão de Crédito:</p>
+      <p class="payment-slip">Boleto:</p>
+    </div>
+    <div class="status">
+      <p class="payment">Paga:</p>
+      <p class="card-operator-decline">Recusada pela operadora de cartão:</p>
+      <p class="pending-payment">Aguardando pagamento:</p>
+      <p class="refunded">Estornada:</p>
+      <p class="best-sales-day">Dia com mais vendas:</p>
+    </div>
+  </section>
+  <section>
+    <h1>Dados</h1>
+    <ul class="table">
+      <li class="table-columns">
+        <p>Nome</p>
+        <p>Email</p>
+        <p>Compra</p>
+        <p>Pagamento</p>
+        <p>Status</p>
+      </li>
+    </ul>
+  </section>
   <script type="module" src="./dist/script.js"></script>
 </body>
 

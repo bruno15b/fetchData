@@ -12,7 +12,7 @@ async function handleData() {
 
     if (checkArrayItems<Transaction>(normalizedDataEntries, "data", "status")) {
       console.log(normalizedDataEntries);
-      normalizedDataEntries.forEach((obj) => appendNamesToHTML(obj));
+      // normalizedDataEntries.forEach((obj) => appendNamesToHTML(obj));
     }
   }
 }

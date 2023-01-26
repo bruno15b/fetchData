@@ -1,0 +1,57 @@
+body,
+h1,
+li,
+ul,
+p {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+body {
+  margin: 10px auto;
+  width: 90vh;
+  border-top: 10px solid rgba(240, 248, 255, 0.507);
+}
+ul,
+li {
+  list-style: none;
+  font-weight: bold;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.status,
+.payment-methods,
+.total {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgb(148, 50, 50);
+}
+
+.status {
+  border-bottom: 1px solid rgb(148, 50, 50);
+}
+
+.table li {
+  display: flex;
+  background-color: aliceblue;
+}
+
+.table li p {
+  flex-grow: 1;
+  flex-basis: auto;
+}
+.table-columns {
+  font-weight: bold;
+}
