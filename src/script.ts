@@ -7,6 +7,7 @@ import appendTransactionToHTMLTable from "./appendTransactionToHTMLTable.js";
 import calculateTotalAmount from "./calculateTotalAmount.js";
 import appendTransactionStatisticsToHtml from "./appendTransactionStatisticsToHtml.js";
 import processPurchaseStatistics from "./processPurchaseStatistics.js";
+import bestDayOfAmountSales from "./bestDayOfAmountSales.js";
 
 async function handleData() {
   const data = await fetchData<APIDataTransaction[]>();
@@ -27,6 +28,11 @@ async function handleData() {
       appendTransactionStatisticsToHtml(status.cardOperatorDecline, ".card-operator-decline");
       appendTransactionStatisticsToHtml(status.pendingPayment, ".pending-payment");
       appendTransactionStatisticsToHtml(status.refunded, ".refunded");
+      appendTransactionStatisticsToHtml(status.creditCard, ".credit-card");
+      appendTransactionStatisticsToHtml(status.paymentSlip, ".payment-slip");
+
+      const bestDay = bestDayOfAmountSales(transactionsData);
+      appendTransactionStatisticsToHtml(bestDay, ".best-sales-day");
     }
   }
 }

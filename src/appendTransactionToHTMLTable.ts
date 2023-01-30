@@ -1,4 +1,4 @@
-import { Transaction } from "./global";
+import { Transaction } from "./global.js";
 
 const table = document.querySelector(".table-body");
 
