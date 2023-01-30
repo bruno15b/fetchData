@@ -5,8 +5,8 @@ interface DataObject {
 export default function normalizeDataEntries<T extends DataObject>(arr: T[], stringToDate: string, stringToNumber: string): T[] {
   const convertStringToDate = (dateString: string): any => {
     const dateArray: string[] = dateString.split("/");
-    const timeString: string = dateString.split(" ")[1];
-    const date = new Date(Number(timeString[0]), Number(dateArray[1]) - 1, Number(dateArray[0]), Number(timeString.split(":")[0]), Number(timeString.split(":")[1]));
+    const timeString = dateArray[2].split(" ");
+    const date = new Date(Number(timeString[0]), Number(dateArray[1]) - 1, Number(dateArray[0]), Number(timeString[1].split(":")[0]), Number(timeString[1].split(":")[1]));
     return date;
   };
 

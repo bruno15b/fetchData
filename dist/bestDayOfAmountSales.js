@@ -1,19 +1,22 @@
 export default function bestDayOfAmountSales(transactionsData) {
     const total = transactionsData.map((obj) => obj.data.getDay());
-    const arrayCount = Object.values(countNumbers(total));
-    const bestDay = arrayCount.indexOf(Math.max(...arrayCount));
+    const objectCount = countNumbers(total);
+    const bestDay = Number(bestDayForSales(Object.entries(objectCount))[0]);
     return bestDay;
+}
+function bestDayForSales(array) {
+    return array.reduce((best, current) => {
+        return current[1] > best[1] ? current : best;
+    });
 }
 function countNumbers(numbers) {
     const count = {};
-    for (const number of numbers) {
-        if (count[number]) {
-            count[number]++;
+    numbers.forEach((item) => {
+        if (!count[item]) {
+            count[item] = 0;
         }
-        else {
-            count[number] = 1;
-        }
-    }
+        count[item] += 1;
+    });
     return count;
 }
 //# sourceMappingURL=bestDayOfAmountSales.js.map

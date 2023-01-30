@@ -14,7 +14,6 @@ async function handleData() {
   if (data) {
     const normalizedDataKeys = normalizeDataKeys(data);
     const transactionsData = normalizeDataEntries(normalizedDataKeys, "data", "valorR");
-
     if (checkArrayItems<Transaction>(transactionsData, "data", "status")) {
       transactionsData.forEach((obj) => {
         appendTransactionToHTMLTable(obj);

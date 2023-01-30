@@ -1,8 +1,8 @@
 export default function normalizeDataEntries(arr, stringToDate, stringToNumber) {
     const convertStringToDate = (dateString) => {
         const dateArray = dateString.split("/");
-        const timeString = dateString.split(" ")[1];
-        const date = new Date(Number(timeString[0]), Number(dateArray[1]) - 1, Number(dateArray[0]), Number(timeString.split(":")[0]), Number(timeString.split(":")[1]));
+        const timeString = dateArray[2].split(" ");
+        const date = new Date(Number(timeString[0]), Number(dateArray[1]) - 1, Number(dateArray[0]), Number(timeString[1].split(":")[0]), Number(timeString[1].split(":")[1]));
         return date;
     };
     const convertStringToNumber = (stringNumber) => {

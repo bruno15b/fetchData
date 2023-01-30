@@ -15,7 +15,7 @@ export default function appendTransactionStatisticsToHtml(value: number | string
   if (className === ".amount") {
     return (element.innerHTML += " R$" + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
   } else if (className === ".best-sales-day" && typeof value === "number") {
-    return (element.innerHTML += " " + new Date(0, value, 0, 0, 0).toLocaleString("pt-br", { weekday: "long" }));
+    return (element.innerHTML += " " + new Date(0, 0, value).toLocaleString("pt-br", { weekday: "long" }));
   } else {
     return (element.innerHTML += " " + value);
   }
